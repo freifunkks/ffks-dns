@@ -1,0 +1,29 @@
+$ORIGIN ffks.
+$TTL 10m  ; TODO: Sobald alles läuft auf ein paar Tage erhöhen!
+ffhl.  IN  SOA  dns1.ffks. ffks.de. (
+              2015101410305 ; serial number of this zone file
+              1h         ; slave refresh
+              3m         ; slave retry time in case of a problem
+              1h         ; slave expiration time
+              1m         ; negative cache
+              )
+
+; nameservers
+@	IN	NS	dns1.ffks.
+
+
+; gateways
+vpn1	IN	A	10.54.1.1
+		AAAA
+vpn2	IN	A	10.54.2.1
+		AAAA
+vpn3	IN	A	10.54.3.1
+		AAAA
+
+; servers
+dns1	IN	A	444.444.444.444
+		AAAA
+ntp1	IN	A
+		AAAA
+
+; self-hosted
